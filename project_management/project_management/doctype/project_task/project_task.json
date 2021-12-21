@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:task_title",
+ "creation": "2021-12-15 13:02:10.762282",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_id",
+  "task_title",
+  "start_date",
+  "column_break_4",
+  "end_date",
+  "status",
+  "assign",
+  "amended_from",
+  "developer_section",
+  "developer",
+  "qa_section",
+  "qa",
+  "users_section",
+  "users",
+  "information_section",
+  "information_message",
+  "send_emails"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task title",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "New\nInformation Sent\nWIP\nunder QA\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project ID",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Task",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "developer",
+   "fieldtype": "Table",
+   "label": "Developer",
+   "options": "Developer"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "developer_section",
+   "fieldtype": "Section Break",
+   "label": "Developer"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "qa_section",
+   "fieldtype": "Section Break",
+   "label": "QA"
+  },
+  {
+   "fieldname": "qa",
+   "fieldtype": "Table",
+   "label": "QA",
+   "options": "QA",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assign",
+   "fieldtype": "Data",
+   "label": "Assign",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "users_section",
+   "fieldtype": "Section Break",
+   "label": "Users"
+  },
+  {
+   "fieldname": "users",
+   "fieldtype": "Table",
+   "label": "Users",
+   "options": "Project User"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "information_section",
+   "fieldtype": "Section Break",
+   "label": "Send Email"
+  },
+  {
+   "fieldname": "information_message",
+   "fieldtype": "Text Editor",
+   "label": "Information Message"
+  },
+  {
+   "fieldname": "send_emails",
+   "fieldtype": "Button",
+   "label": "Send Emails",
+   "read_only_depends_on": "eval:doc.status==\"New\""
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-12-21 15:50:04.851415",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Project Task",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Developer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "QA",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
